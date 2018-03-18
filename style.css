@@ -1,0 +1,17 @@
+html { 
+  background: url(http://userscontent2.emaze.com/images/8971df5a-c264-4681-a7ec-34b362ac2e75/Slide2_Pic1_635873436451662419.png) no-repeat center center fixed; 
+   background-size: cover;
+}
+ @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+body{
+  
+   font-family: 'Gloria Hallelujah', cursive;
+   padding: 18% 24%;
+   text-align: center;
+   font-size:20px;
+   text-align: center;
+   color: yellow;
+}
+
+ 

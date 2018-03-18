@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  ilcomarian</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+ <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+ 
+ </head>
+<body>
+ <p id="demo"> </p>
+  <script>
+    var text = "We want chilly-willy! We want chilly-willy! Lord, give me guidance… The alcohol! The cause of, and solution to, all of life is problems. I cant promise  try, but   try to try. I was saying . Shut up, brain, or  stab you with a Q-tip! We’re here! We are queer! We dont  want any more bears! Homer, you are as dumb as a mule and twice as ugly. If a strange man offers you a ride, I say take it! I think it was physically possible, but this both sucks and blows. Oh boy. Looks like it is suicide again for me ? This anonymous  of   troglodytes has cost me the election. And yet, if I were to have them killed, I would be the one to go to jail. That is democracy for you.Ay ca-ram-ba!  Ay, caram-ba!  Ay-ca-ramba! Ay-ca-ram-ba!  "
+ 
+text = text.toLowerCase().replace(/[^a-z - !\s]/g, '').split(' ')
+
+ 
+function generateWordPairs(arr) {
+  var obj = {};
+  for(var i = 0; i<arr.length-1; i++) {
+     if(obj[arr[i]]) {
+       obj[arr[i]].push(arr[i+1]);
+    } else {
+      obj[arr[i]] = [arr[i+1]];
+    }
+  }
+  return obj;
+  }
+var obj = generateWordPairs(text)
+ 
+
+ function helpFunc(word){
+   if(word.length  === 0 || !obj[word][0].length) {
+     var index = Math.floor(Math.random()*((text.length)-1));
+     word = text[index];
+   }
+   return obj[word][Math.floor(Math.random()*obj[word].length)];
+ }
+
+
+function writeLine(obj, n){ 
+  var line = ''
+  
+  for(var i = 0; i < (n / 2); i++){
+    var index = Math.floor(Math.random()*((text.length)-1))
+    var word = text[index];
+    
+    line += word + ' ' + helpFunc(word) + ' ' 
+  }
+  return line
+}
+
+ 
+
+function generatePoem(arr, n){
+  var poem = ''
+  if(!n){
+  n = Math.floor(Math.random()*4+3)}
+  for(var i = 0; i < n; i++){
+  poem += writeLine(obj, n) ;
+  }
+ return poem
+ 
+}
+
+
+
+
+function writePoem(n){
+  return generatePoem(text, n)
+}
+     
+document.getElementById("demo").innerHTML = writePoem(5) 
+   
+ </script>
+  
+</body>
+ </html>
+  
+  
+
+</body>
+
+</html>
